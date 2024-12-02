@@ -2,6 +2,7 @@
   "expo": {
     "name": "storeapp",
     "slug": "storeapp",
+    "scheme": "storeapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,8 +10,8 @@
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "native",
+      "backgroundColor": "#156651"
     },
     "ios": {
       "supportsTablet": true
@@ -18,11 +19,23 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#156651"
+      },
+      "package": "com.okechukwudanieldev.storeapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "9a16f686-9165-4d90-81de-849a9f6ba5aa"
+      }
     }
   }
 }
