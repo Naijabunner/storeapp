@@ -2,12 +2,13 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 import { Link, useRouter } from 'expo-router'
+import { appRoutes } from '../constants/routes'
 
 const CustomSplashScreen = () => {
    const router = useRouter()
      useEffect(()=>{
     const timeout= setTimeout(() => {
-    router.replace('/onBoard')  
+    router.replace(appRoutes.Login)  
     }, timeout);
 
     return()=>{
@@ -23,7 +24,7 @@ const CustomSplashScreen = () => {
     end={{ x: 0, y: 1 }}   // Bottom
     >
       <Image
-        source={require('../assets/splash-icon.png')}
+        source={require('../assets/splash.png')}
         width={100}
         />
       <Text style={{ textAlign:'center', fontSize:36, fontWeight:'900', color:'white'}}>HomeHaven</Text>

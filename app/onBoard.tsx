@@ -5,6 +5,8 @@ import { Colors } from '../constants/colors';
 import { Dimensions, Image, StyleSheet, View } from 'react-native';
 import OnboardText from '../components/onBoard/OnboardText';
 import Button from '../components/UI/Button';
+import { useRouter } from 'expo-router';
+import { appRoutes } from '../constants/routes';
 
 const { width, height } = Dimensions.get('window');
 
@@ -28,6 +30,7 @@ const data=[
 
 
 const OnBoard = () => {
+  const router = useRouter()
   const onboardingRef = useRef<Onboarding>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -35,7 +38,8 @@ const OnBoard = () => {
   const DoneButton = () => {
     const nextHandler = () => {
       //@ts-ignore
-      onboardingRef?.current?.goToPage(0, true)
+      // onboardingRef?.current?.goToPage(0, true)
+      router.replace(appRoutes.Login)
     }
     return (
       <>
@@ -103,9 +107,6 @@ const OnBoard = () => {
       <StatusBar />
       <Onboarding
         ref={onboardingRef}
-        // pageIndexCallback={}
-        
-        onDone={() => console.log('done')}
         pages={data.map((onboardData, index) => ({
           backgroundColor: onboardData.backgroundColor,
           image: <Image source={onboardData.imagePath} style={{ backgroundColor: Colors.primary, width: width, height: '100%' }} />,

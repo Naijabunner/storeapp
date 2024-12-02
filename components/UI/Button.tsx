@@ -19,7 +19,7 @@ const Button:FC<customButtonProps> = ({ variant = 'primary', title, containerSty
   return (
     <TouchableOpacity style={[styles.btnContainer, containerStyle, variant === 'alternate' && styles.alternateBg]} onPress={onPress}>
         {children}
-      <Text style={[typography.bodyBold, variant === 'alternate'? styles.alternateText : {color:'white'}]}>{title}</Text>
+      <Text style={[typography.bodyBold, variant === 'alternate'? styles.alternateText : {color:'white'}, textStyle]}>{title}</Text>
     </TouchableOpacity>
   )
 }
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:40,
         borderRadius:5,
         paddingVertical:10,
-        margin:5
+       margin:5
     },
     alternateText:{
         color:Colors.primary
