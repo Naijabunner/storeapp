@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleProp, StyleSheet, Text, TextStyle, View } from 'react-native'
 import React from 'react'
 import typography from '../../constants/typography'
 import { Colors } from '../../constants/colors'
@@ -8,7 +8,12 @@ const AuthTitle = ({
     subTitle,
     titleStyles,
     subTitleStyles,
-    
+}:{
+  title: string,
+  subTitle:string,
+  titleStyles?:StyleProp<TextStyle>,
+  subTitleStyles?:StyleProp<TextStyle>,
+  
 }) => {
   return (
     <View style={{marginVertical:20}}>

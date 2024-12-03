@@ -1,4 +1,5 @@
 export const appRoutes={
     onboard:'onBoard',
-    Login:'/auth/Login'
+    Login:'/auth/Login',
+    Register:'/auth/Register',
 }

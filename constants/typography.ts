@@ -44,6 +44,7 @@ const typography = StyleSheet.create({
   bodySmallRegular: {
     fontFamily: 'Manrope-Regular',
     fontSize: 14,
+    fontWeight:'regular',
     lineHeight: 17,
   },
   bodySmallBold: {

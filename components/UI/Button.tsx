@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
        margin:5
     },
     alternateText:{
-        color:Colors.primary
+        color:Colors.primary,        
     },
     alternateBg:{
         backgroundColor:'white'

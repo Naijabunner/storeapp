@@ -13,6 +13,11 @@ const _authlayout = () => {
             paddingHorizontal:20,
             paddingTop:10,
         }}} />
+        <Stack.Screen name='Register' options={{ headerShown: false, title: "" , contentStyle:{
+            backgroundColor:'white',
+            paddingHorizontal:20,
+            paddingTop:10,
+        }}} />
       </Stack>
     </>
       
