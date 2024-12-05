@@ -8,7 +8,7 @@ const CustomSplashScreen = () => {
    const router = useRouter()
      useEffect(()=>{
     const timeout= setTimeout(() => {
-    router.replace(appRoutes.Login)  
+    router.replace('/Home')  
     }, timeout);
 
     return()=>{

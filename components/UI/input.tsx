@@ -1,9 +1,27 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import React, { ComponentProps, FC } from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import typography from '../../constants/typography'
 import { Colors } from '../../constants/colors'
-const CustomInput = () => {
+interface customInputProps {
+  placeholder:string,
+  label: string,
+  name:string,
+  handleChange:(value:string, name:string)=>void,
+  value:string,
+  icon:IoniconName
+}
+
+export type IoniconName = keyof typeof Ionicons.glyphMap;
+
+const CustomInput:FC<customInputProps> = ({
+  placeholder,
+  label,
+  name,
+  handleChange,
+  value,
+  icon
+}) => {
   return (
       <View style={{
         flexDirection: 'row',
@@ -19,7 +37,7 @@ const CustomInput = () => {
         marginVertical:10
       }}>
         <Ionicons
-          name='mail'
+          name={icon}
           size={24}
           style={{ width: 24, height: 24 }}
         />
@@ -30,7 +48,7 @@ const CustomInput = () => {
           <Text style={[{
             color: Colors.neutral_90
           }, typography.caption]}>
-            Email
+            {label}
           </Text>
           <TextInput
             style={[{
@@ -39,7 +57,9 @@ const CustomInput = () => {
               paddingTop: 0,
               paddingBottom: 0,
             }, typography.bodyRegular]}
-            placeholder='rifqi.naufal@mail.com'
+            placeholder={placeholder}
+            value={value}
+            onChangeText={(value)=>handleChange(value,name)}
           />
         </View>
       </View>

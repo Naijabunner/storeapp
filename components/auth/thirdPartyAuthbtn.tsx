@@ -4,17 +4,16 @@ import Button from '../UI/Button'
 import { Colors } from '../../constants/colors'
 import typography from '../../constants/typography'
 
-const ThirdPartyAuthbtn = ({ type, authType}: { type: 'google' | 'facebook' , authType:'register' |'login'}) => {
-  const labelAction= authType ==='login' ? 'Log In' :'Continue'
+const ThirdPartyAuthbtn = ({ type, authType }: { type: 'google' | 'facebook', authType: 'register' | 'login' }) => {
+  const labelAction = authType === 'login' ? 'Log In' : 'Continue'
   const label = type === 'google' ? 'with Google' : 'with Facebook'
   const imagePath = type === 'google' ? require('../../assets/Icons/google.png') : require('../../assets/Icons/facebook.png')
 
-  const handlePress = () => {
+  const handlePress = () => { }
 
-  }
   return (
     <Button
-      title={labelAction + " " +label}
+      title={labelAction + " " + label}
       variant='alternate'
       onPress={handlePress}
       containerStyle={{

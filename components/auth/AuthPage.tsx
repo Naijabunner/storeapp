@@ -1,18 +1,25 @@
 import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React from 'react'
+import React, { FC, ReactNode } from 'react'
 import AuthTitle from '../../components/auth/authTitle'
-import LoginForm from '../../components/auth/LoginForm'
 import { Colors } from '../../constants/colors'
 import ThirdPartyAuthbtn from '../../components/auth/thirdPartyAuthbtn'
 import { Link } from 'expo-router'
 import { appRoutes } from '../../constants/routes'
 
-const AuthPage = ({
-    auth,
-    title,
-    subTitle,
-    showLink,
-    children
+interface authpageProps {
+  auth: 'register' | 'login',
+  title: string,
+  subTitle: string,
+  showLink: boolean,
+  children: ReactNode
+}
+
+const AuthPage: FC<authpageProps> = ({
+  auth,
+  title,
+  subTitle,
+  showLink,
+  children
 }) => {
 
   return (
@@ -21,8 +28,9 @@ const AuthPage = ({
         title={title}
         subTitle={subTitle}
       />
-     
-     {children}
+      {children}
+
+      {/* container for the google and facebook auth buttons  */}
       <View style={{
         gap: 5
       }}>
@@ -32,9 +40,11 @@ const AuthPage = ({
         />
         <ThirdPartyAuthbtn
           type='facebook'
-           authType={auth}
+          authType={auth}
         />
       </View>
+
+      {/* Toogle "Don’t have an account?"  */}
       {showLink && <Text style={{
         textAlign: 'center',
         marginTop: 20

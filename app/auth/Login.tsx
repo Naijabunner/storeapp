@@ -1,15 +1,22 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
-import AuthTitle from '../../components/auth/authTitle'
-import LoginForm from '../../components/auth/LoginForm'
-import { Colors } from '../../constants/colors'
-import ThirdPartyAuthbtn from '../../components/auth/thirdPartyAuthbtn'
-import { Link } from 'expo-router'
-import { appRoutes } from '../../constants/routes'
 import AuthPage from '../../components/auth/AuthPage'
 import AuthForm from '../../components/auth/AuthForm'
+import { loginFormData } from '../../data/authFormData'
+import { loginSchema } from '../../data/ValidationSchema'
+
+const userInput = {
+  email: {
+    value: '',
+    validationStatus: ''
+  },
+  password: {
+    value: '',
+    validationStatus: ''
+  },
+}
 
 const Login = () => {
+
   return (
    <AuthPage
    title={'Welcome Back!'}
@@ -19,11 +26,12 @@ const Login = () => {
    >
     <AuthForm
     ctaLabel={'Log In'}
+    formData={loginFormData}
+    inputData={userInput}
+    validationSchema={loginSchema}
     />
    </AuthPage>
   )
 }
 
 export default Login
-
-const styles = StyleSheet.create({})
