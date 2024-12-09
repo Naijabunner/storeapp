@@ -10,10 +10,9 @@ const _TabLayout = () => {
     tabBarStyle:{
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
-        shadowColor: Colors.neutral_30,
-        elevation:20,
          height:80,
         paddingTop:5,
+        shadowOpacity:0,
     }
    }}>
     <Tabs.Screen
